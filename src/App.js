@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Cards from "./Cards";
+import data from "./Netflixdata";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+function App(){
+  return(
+    <>
+    <h1 className="Heading">My Anime List</h1>
+      {data.map((data)=> { return(<>
+      <Cards 
+        imgsrc={data.imgsrc}
+        desc={data.desc}
+        title={data.title}
+        link={data.link}
+      />
+    </>)})}
+            
+    </>
   );
-}
+};
 
 export default App;
